@@ -115,7 +115,7 @@ class Af_Readability extends Plugin {
 								<img src='<?= Feeds::_get_icon_url($f) ?>' style="max-height: 20px" />
 							<?php } else { ?> <i class='material-icons'>rss_feed</i> <?php } ?>
 							<a href='#'	onclick="CommonDialogs.editFeed(<?= $f ?>)">
-									<?= Feeds::_get_title($f) . " " . (in_array($f, $append_feeds) ? __("(append)") : "") ?>
+									<?= Feeds::_get_title($f, $this->host->get_owner_uid()) . " " . (in_array($f, $append_feeds) ? __("(append)") : "") ?>
 							</a>
 						</li>
 					<?php } ?>

@@ -4,7 +4,7 @@ Plugins.Af_Readability = {
     orig_attr_name: 'data-readability-orig-content',
     self: this,
     embed: function(id) {
-        const content = App.find(App.isCombinedMode() ? `.cdm[data-article-id="${id}"] .content-inner` :
+        const content = document.querySelector(App.isCombinedMode() ? `.cdm[data-article-id="${id}"] .content-inner` :
             `.post[data-article-id="${id}"] .content`);
 
         if (content.hasAttribute(self.orig_attr_name)) {

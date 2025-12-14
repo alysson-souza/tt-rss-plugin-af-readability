@@ -4,50 +4,50 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb44cc79a0eaef9cd9c2f2ac697cbe9c0
+class ComposerStaticInit2fe179ea2f705eabbdb3ede3283fed4d
 {
     public static $prefixLengthsPsr4 = array (
-        'f' => 
+        'f' =>
         array (
             'fivefilters\\Readability\\' => 24,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
-        'M' => 
+        'M' =>
         array (
             'Masterminds\\' => 12,
         ),
-        'L' => 
+        'L' =>
         array (
             'League\\Uri\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'fivefilters\\Readability\\' => 
+        'fivefilters\\Readability\\' =>
         array (
             0 => __DIR__ . '/..' . '/fivefilters/readability.php/src',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\Log\\' =>
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Masterminds\\' => 
+        'Masterminds\\' =>
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
         ),
-        'League\\Uri\\' => 
+        'League\\Uri\\' =>
         array (
-            0 => __DIR__ . '/..' . '/league/uri/src',
-            1 => __DIR__ . '/..' . '/league/uri-interfaces/src',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
     );
 
@@ -58,9 +58,9 @@ class ComposerStaticInitb44cc79a0eaef9cd9c2f2ac697cbe9c0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb44cc79a0eaef9cd9c2f2ac697cbe9c0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb44cc79a0eaef9cd9c2f2ac697cbe9c0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb44cc79a0eaef9cd9c2f2ac697cbe9c0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2fe179ea2f705eabbdb3ede3283fed4d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2fe179ea2f705eabbdb3ede3283fed4d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit2fe179ea2f705eabbdb3ede3283fed4d::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -31,5 +31,32 @@ Plugins.Af_Readability = {
                 Notify.error("Unable to fetch full text for this article");
             }
         });
+    },
+    updateCategoryCheckbox: function(catId) {
+        const checkboxes = document.querySelectorAll('.feed_checkbox_' + catId);
+        const catCheckbox = document.getElementById('cat_checkbox_' + catId);
+        const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+        
+        if (checked === 0) {
+            catCheckbox.checked = false;
+            catCheckbox.indeterminate = false;
+        } else if (checked === checkboxes.length) {
+            catCheckbox.checked = true;
+            catCheckbox.indeterminate = false;
+        } else {
+            catCheckbox.checked = false;
+            catCheckbox.indeterminate = true;
+        }
+    },
+    toggleCategory: function(catId) {
+        const checkboxes = document.querySelectorAll('.feed_checkbox_' + catId);
+        const catCheckbox = document.getElementById('cat_checkbox_' + catId);
+        const newState = catCheckbox.checked;
+        
+        checkboxes.forEach(cb => cb.checked = newState);
+        catCheckbox.indeterminate = false;
+    },
+    initCategoryCheckbox: function(catId) {
+        document.getElementById('cat_checkbox_' + catId).indeterminate = true;
     }
 };
